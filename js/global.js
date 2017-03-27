@@ -11,6 +11,7 @@ window.onload = function() {
 	zz2.style.height = height + 'px';
 	
 	ava.onclick = function() {
+		var This = this;
 		startMove(zz1, {
 			'left': -width,
 		}, 15, function() {
@@ -21,33 +22,24 @@ window.onload = function() {
 		}, 15, function() {
 			zz2.remove();
 		});
-		startMove(this, {
+		startMove(This, {
 			'opacity': 100,
 			'left': 250,
 			'top': 100,
 			'width': 400,
 			'height': 400
 		}, 20, function() {
-			startMove(ava, {
+			startMove(This, {
 				'left': 50,
 				'top': 50,
 				'width': 100,
 				'height': 100
-			}, 5)
+			}, 5, function() {
+				This.onclick = null;
+				This.style.cursor = 'default';
+			});
 		});
 	};
-	
-//	ava.onmouseover = function() {
-//		startMove(this, {
-//			'opacity': 100
-//		})
-//	};
-//	
-//	ava.onmouseout = function() {
-//		startMove(this, {
-//			'opacity': 70
-//		})
-//	};
 }
 
 function getStyle(obj, attr) {
