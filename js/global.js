@@ -3,6 +3,7 @@ window.onload = function() {
 	var img = document.getElementsByClassName('ava-img')[0];
 	var zz1 = document.getElementsByClassName('zz1')[0];
 	var zz2 = document.getElementsByClassName('zz2')[0];
+	var resume = document.getElementsByClassName('resume')[0];
 	var height = document.documentElement.clientHeight;
 	var width = document.documentElement.clientWidth/2;
 	zz1.style.left = 0;
@@ -30,11 +31,12 @@ window.onload = function() {
 			'height': 400
 		}, 20, function() {
 			startMove(This, {
-				'left': 50,
-				'top': 50,
+				'left': 30,
+				'top': 30,
 				'width': 100,
 				'height': 100
-			}, 5, function() {
+			}, 4, function() {
+				resume.style.display = 'block';
 				This.onclick = null;
 				This.style.cursor = 'default';
 			});
