@@ -1,11 +1,19 @@
 window.onload = function() {
-	var ava = document.getElementsByClassName('avatar')[0];
+	var ava = document.getElementsByClassName('ava-float')[0];
 	var img = document.getElementsByClassName('ava-img')[0];
+	var zhezhao = document.getElementsByClassName('zhezhao');
 	var zz1 = document.getElementsByClassName('zz1')[0];
 	var zz2 = document.getElementsByClassName('zz2')[0];
+	var nav = document.getElementsByClassName('nav')[0];
 	var resume = document.getElementsByClassName('resume')[0];
+	var body = document.getElementsByTagName('body')[0];
 	var height = document.documentElement.clientHeight;
-	var width = document.documentElement.clientWidth/2;
+	var halfWidth = document.documentElement.clientWidth/2;
+	
+	resume.style.width = halfWidth*2 - 250 + 'px';
+	ava.style.left = halfWidth - 100 + 'px';
+	zhezhao[0].style.width = halfWidth + 'px';
+	zhezhao[1].style.width = halfWidth + 'px';
 	zz1.style.left = 0;
 	zz1.style.height = height + 'px';
 	zz2.style.right = 0;
@@ -14,12 +22,12 @@ window.onload = function() {
 	ava.onclick = function() {
 		var This = this;
 		startMove(zz1, {
-			'left': -width,
+			'width': 0,
 		}, 15, function() {
 			zz1.remove();
 		});
 		startMove(zz2, {
-			'right': -width,
+			'width': 0,
 		}, 15, function() {
 			zz2.remove();
 		});
@@ -31,18 +39,24 @@ window.onload = function() {
 			'height': 400
 		}, 20, function() {
 			startMove(This, {
-				'left': 30,
-				'top': 30,
-				'width': 100,
-				'height': 100
-			}, 4, function() {
-				resume.style.display = 'block';
-				This.onclick = null;
-				This.style.cursor = 'default';
+				'left': 50,
+				'top': 50,
+				'width': 150,
+				'height': 150
+			}, 4);
+			startMove(nav, {'left': 0}, 10, function() {
+				This.remove();
+				body.style.overflow = 'auto';
 			});
 		});
 	};
 }
+
+addEventListener("load", function() {
+	setTimeout(function() {
+		window.scrollTo(0,1);
+	}, 0);
+}, false); 
 
 function getStyle(obj, attr) {
 	if (obj.currentStyle) {
