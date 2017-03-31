@@ -50,6 +50,7 @@ window.onload = function() {
 			});
 		});
 	};
+	showQR();
 }
 
 addEventListener("load", function() {
@@ -58,6 +59,25 @@ addEventListener("load", function() {
 	}, 0);
 }, false); 
 
+function showQR() {
+	var wechat = document.getElementsByClassName('wechat')[0];
+	var qq = document.getElementsByClassName('qq')[0];
+	var wcQR = document.getElementsByClassName('wechat-qr')[0];
+	var qqQR = document.getElementsByClassName('qq-qr')[0];
+	wechat.onmouseover = function() {
+		startMove(wcQR, {'opacity': 100}, 5);
+	}
+	wechat.onmouseout = function() {
+		startMove(wcQR, {'opacity': 0}, 5);
+	}
+	qq.onmouseover = function() {
+		startMove(qqQR, {'opacity': 100}, 5);
+	}
+	qq.onmouseout = function() {
+		startMove(qqQR, {'opacity': 0}, 5);
+	}
+}
+
 function getStyle(obj, attr) {
 	if (obj.currentStyle) {
 		return obj.currentStyle[attr];
@@ -65,6 +85,7 @@ function getStyle(obj, attr) {
 		return getComputedStyle(obj, false)[attr];
 	}
 }
+
 
 function startMove(obj, json, spd, fn) {
 	clearInterval(obj.timer);
@@ -101,3 +122,4 @@ function startMove(obj, json, spd, fn) {
 	}
 	, 30);
 }
+

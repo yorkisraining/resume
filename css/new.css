@@ -20,6 +20,20 @@ ul {
 	list-style: none;
 }
 
+@font-face {
+	font-family: 'iconfont';  /* project id 266818 */
+	src: url('//at.alicdn.com/t/font_6mr7a89cw990ms4i.eot');
+	src: url('//at.alicdn.com/t/font_6mr7a89cw990ms4i.eot?#iefix') format('embedded-opentype'),
+	url('//at.alicdn.com/t/font_6mr7a89cw990ms4i.woff') format('woff'),
+	url('//at.alicdn.com/t/font_6mr7a89cw990ms4i.ttf') format('truetype'), 	url('//at.alicdn.com/t/font_6mr7a89cw990ms4i.svg#iconfont') format('svg');
+}
+
+.iconfont {
+	font-family: 'iconfont';
+	font-weight: 16px;
+	font-style: normal;
+}
+
 .clearfix:after {
 	clear: both;
 	content: ".";
@@ -94,7 +108,6 @@ ul {
 	background-image: url(../img/background.jpg);
 	color: #fff;
 	font-family: "微软雅黑";
-	font-weight: bold;
 	letter-spacing: .1em;
 	text-align: center;
 }
@@ -103,6 +116,50 @@ ul {
 	width: 150px;
 	height: 150px;
 	margin: 50px auto;
+}
+
+.nav-derec-p {
+	width: 80%;
+	text-align: center;
+	float: right;
+	padding-right: 20px;
+	font-size: 12px;
+	white-space: pre-line;
+}
+
+.connect {
+	width: 100%;
+	margin-top: 50px;
+	text-align: center;
+	position: relative;
+}
+
+.cnt-icon {
+	font-size: 26px;
+	padding: 0 10px;
+	cursor: pointer;
+}
+
+.QR {
+	background: #F4F4F4;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	opacity: 0;
+}
+
+.wechat-qr {
+	top: 30px;
+	left: 50px;
+}
+
+.qq-qr {
+	top: 30px;
+	left: 100px;
+}
+
+.qrcode {
+	width: 100%;		
 }
 
 .nav-detail {
@@ -152,6 +209,10 @@ ul {
 	font-weight: bold;
 }
 
+.head-icon {
+	font-size: 24px;
+}
+
 .message {
 	margin: 20px 0;
 	font-size: 14px;
@@ -167,9 +228,14 @@ ul {
 
 .info-li span {
 	padding-left: 10px;
-	display: block;
+	display: inline-block;
 	width: 180px;
 	border-bottom: 1px solid #ccc;
+}
+
+.info-icon {
+	font-size: 20px;
+	margin-right: 5px;
 }
 
 .edu {
